@@ -1,0 +1,97 @@
+## Project Report: Smart Task Scheduler with Priority Queues
+
+### Introduction
+This project, “Smart Task Scheduler with Priority Queues,” is a desktop application built in Java using Swing. Its goal is to help users manage their tasks efficiently by prioritizing urgent items, providing timely reminders, and tracking deadlines, all within a user-friendly interface.
+
+***
+
+### Objectives
+- Allow users to **create, edit, and delete tasks** with assigned priorities and deadlines.
+- Automatically sort tasks by **urgency and deadline** using a priority queue.
+- Implement **reminders** for upcoming tasks.
+- Support **saving and loading** all tasks for data persistence.
+- Enable **filtering** for high-priority and today’s tasks.
+
+***
+
+### System Design
+
+#### Architecture
+- **Frontend:** Developed using Java Swing, providing forms for task management and filter functionalities.
+- **Backend:** Task data is managed using a `PriorityQueue` and stored via Java serialization.
+- **Reminder System:** Implemented using Java’s Timer to notify users before deadline.
+
+#### Key Classes
+- **Task:** Represents a to-do item with title, priority, and deadline.
+- **SmartTaskScheduler:** Main JFrame, handles UI, user actions, and data flow.
+- **TaskDialog:** Modal dialog for adding/editing tasks.
+- **File I/O:** Java’s `ObjectInputStream` and `ObjectOutputStream` are used for storing and loading serialized task lists [6].
+
+***
+
+### Implementation
+
+#### Task Management
+- Users can add a task by providing a title, priority (1-highest to 5-lowest), and deadline.
+- Tasks may be edited or removed at will.
+- The underlying `PriorityQueue` ensures high-priority and near-deadline tasks are always displayed at the top.
+
+#### Reminders
+- Java’s `Timer` checks all pending tasks every minute and pops up a warning if a task is due within 5 minutes.
+
+#### Persistence
+- The application allows users to save the current list of tasks to a file and reload them later.
+
+#### Filtering and Viewing
+- Filters are provided to show only today's tasks or tasks with highest priority.
+- The full task list can always be restored.
+
+***
+
+### Testing and Results
+
+#### Test Cases
+- **Add/Edit/Delete:** All task CRUD operations were tested, confirming correct queue ordering and GUI refresh.
+- **Reminders:** Notifications trigger correctly for tasks scheduled within the next 5 minutes.
+- **Persistence:** Tasks are successfully saved and loaded without data loss.
+- **Filters:** Both priority and date filters correctly change the table display.
+
+#### Results
+- The application handled multiple concurrent tasks, verifying queue stability and GUI responsiveness.
+- Edge cases (e.g., empty title, invalid date) were identified, and error popups guide users for corrections.
+
+***
+
+### Conclusion
+
+This project demonstrates a robust task scheduling system with practical features:
+- Efficient task ordering using the PriorityQueue data structure.
+- Timely user reminders for deadlines.
+- Support for real-world task management with persistence and filtering.
+
+***
+
+### Future Scope
+
+- Integrate cross-platform notification (email/SMS) using APIs.
+- Enhance with recurring tasks and categories/tags.
+- Move to a database backend for larger task volumes.
+- Develop a mobile client or web synchronization for portability [6].
+
+***
+
+### References
+
+- Java SE Documentation
+- Swing GUI Tutorials: https://docs.oracle.com/javase/tutorial/uiswing/
+- Task management strategy insights [6]
+- Project report writing guides [1][2]
+
+***
+
+**Appendix**
+- Source code attached as `SmartTaskScheduler.java`
+- Build procedure and .jar execution steps detailed in project README
+
+***
+
