@@ -1,7 +1,8 @@
 ## Project Report: Smart Task Scheduler with Priority Queues
 
 ### Introduction
-This project, “Smart Task Scheduler with Priority Queues,” is a desktop application built in Java using Swing. Its goal is to help users manage their tasks efficiently by prioritizing urgent items, providing timely reminders, and tracking deadlines, all within a user-friendly interface.
+This project, “Smart Task Scheduler with Priority Queues,” is a desktop application built in Java using Swing. 
+Its goal is to help users manage their tasks efficiently by prioritizing urgent items, providing timely reminders, and tracking deadlines, all within a user-friendly interface.
 
 ***
 
@@ -94,4 +95,7 @@ This project demonstrates a robust task scheduling system with practical feature
 - Build procedure and .jar execution steps detailed in project README
 
 ***
+##Screenshots**
+screenshots of project available in repository.**
 
+***
